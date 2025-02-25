@@ -1,7 +1,3 @@
 document.addEventListener("DOMContentLoaded", () => {
-    iniciarApp();
+    actualizarContador();
 });
-function iniciarApp() {
-    mostrarMenu();
-    cargarProductos();
-}

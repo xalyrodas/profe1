@@ -3,10 +3,10 @@ function crearProducto(producto) {
     div.classList.add("producto");
     div.dataset.id = producto.id;
     div.innerHTML = `
-        <div class="imagen">🎯</div>
+        <div class="imagen">[Imagen]</div>
         <p>${producto.nombre}</p>
         <p>Q ${producto.precio.toFixed(2)}</p>
-        <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+        <button class="agregar" data-id="${producto.id}">Agregar</button>
     `;
     return div;
 }
