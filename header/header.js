@@ -1,19 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    mostrarMenu();
-});
-
-function mostrarMenu() {
+document.addEventListener("DOMContentLoaded", () => {
     const header = document.createElement("header");
+    header.id = "header";
     header.innerHTML = `
-        <div>
-            <button id="closeButton">X</button> Productos marcados <span id="contador">0</span>
-        </div>
+        <h1>Mostrar Producto</h1>
+        <span id="contador">0</span>
     `;
-    document.body.prepend(header);
+    document.body.insertBefore(header, document.body.firstChild);
 
-    // Opcional: Añadir acción al botón de cierre
-    const closeButton = document.getElementById('closeButton');
-    closeButton.addEventListener('click', () => {
-        header.style.display = 'none'; // Esconde el header al hacer clic en el botón X
+    header.addEventListener("click", () => {
+        alert(`Llevas ${carrito.length} productos en el carrito.`);
     });
-}
+});
