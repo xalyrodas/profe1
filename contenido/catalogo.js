@@ -1,17 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const contenedor = document.createElement("div");
-    contenedor.id = "catalogo";
-    document.body.appendChild(contenedor);
+import { dataProductos } from './data.js';
+import { agregarProducto } from './funcionesProducto.js';
+import { crearItemProducto } from './itemProducto.js';
 
+export function cargarCatalogo() {
+    const catalogo = document.getElementById('catalogo');
     dataProductos.forEach(producto => {
-        const productoElemento = crearProducto(producto);
-        contenedor.appendChild(productoElemento);
+        const item = crearItemProducto(producto);
+        catalogo.appendChild(item);
     });
+}
 
-    contenedor.addEventListener("click", (e) => {
-        if (e.target.classList.contains("agregar")) {
-            const id = parseInt(e.target.dataset.id);
-            agregarProducto(id);
-        }
-    });
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('agregar')) {
+        const productoId = event.target.dataset.id;
+        agregarProducto(productoId);
+    }
 });

@@ -1,13 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const header = document.createElement("header");
-    header.id = "header";
+export function cargarHeader() {
+    const header = document.getElementById('header');
     header.innerHTML = `
-        <h1>Mostrar Producto</h1>
-        <span id="contador">0</span>
+        <div class="titulo">Catálogo de Productos</div>
+        <div class="contador-container">
+            <span>Productos marcados:</span>
+            <div id="contador">0</div>
+        </div>
     `;
-    document.body.insertBefore(header, document.body.firstChild);
-
-    header.addEventListener("click", () => {
-        alert(`Llevas ${carrito.length} productos en el carrito.`);
-    });
-});
+}

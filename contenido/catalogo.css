@@ -1,19 +1,56 @@
 #catalogo {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     padding: 20px;
 }
+
 .producto {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 200px; /* Ancho fijo para cada producto */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    width: 150px;
+    border-radius: 10px;
 }
-button.agregar {
-    background-color: green;
+
+.producto img {
+    width: 100%;
+    height: 150px; /* Altura fija para la imagen */
+    object-fit: cover; /* Ajusta la imagen sin distorsionar */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.precio-agregar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.producto p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.producto button {
+    background-color: #28a745;
     color: white;
     border: none;
-    padding: 5px;
+    padding: 8px 15px;
     cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.producto button:hover {
+    background-color: #218838;
 }

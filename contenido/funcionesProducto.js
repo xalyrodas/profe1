@@ -1,15 +1,6 @@
-let carrito = [];
+let productosAgregados = 0;
 
-function agregarProducto(id) {
-    if (!carrito.includes(id)) {
-        carrito.push(id);
-        actualizarContador();
-    }
-}
-
-function actualizarContador() {
-    const contador = document.getElementById("contador");
-    if (contador) {
-        contador.textContent = carrito.length;
-    }
+export function agregarProducto(id) {
+    productosAgregados++;
+    document.getElementById('contador').textContent = productosAgregados;
 }
